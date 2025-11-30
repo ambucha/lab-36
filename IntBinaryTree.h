@@ -40,7 +40,7 @@ public:
    bool searchNode(string);
    void remove(string);
 
-   // Public wrappers for tree traversal functions.
+   // Public wrappers for tree traversal functions.  
    void displayInOrder() const     {  displayInOrder(root); }
    void displayPreOrder() const    {  displayPreOrder(root); }
    void displayPostOrder() const   {  displayPostOrder(root); }
