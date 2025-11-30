@@ -81,6 +81,7 @@ int main() {
                 else{
                     cout << "Code not found" << endl;
                 }
+                break;
             case 3:
                 cout << "Enter code to search for: ";
                 getline(cin,code);
@@ -92,8 +93,9 @@ int main() {
                 else{
                     cout << "Code not found" << endl;
                 }
+                break;
             case 4:
-                cout << "Enter code to modify: " << endl;
+                cout << "Enter code to modify: ";
                 getline(cin,code);
                 
                 // chcek to see if the code even exists in the first place
@@ -105,7 +107,26 @@ int main() {
                     // here is where we use temp code to be the new code added
                     getline(cin,tempcode);
 
+                    // easiest way to modify would be to simply remove the old and insert the new tbh
+                    tree.remove(code);
+                    tree.insertNode(tempcode);
+                    cout << "Code modified" << endl;
                 }
+                // forgot to put break statements in the cases
+                break;
+            case 5:
+            // just displaying all the codes in order 
+                cout << endl << "Codes In Order:" << endl;
+                tree.displayInOrder();
+                break;
+            case 0:
+            // 0 case to make sure we exit at some point
+                cout << "Exiting..." << endl;
+                break;
+            default:
+                // default case should jsut be saying that the choice was wrong and keep us in the loop until vbvalid chocie given
+                cout << "Invalid choice, trying again..." << endl;
+                break;
                  
         }
 
