@@ -68,6 +68,44 @@ int main() {
                     cout << "Code inserted" << endl;
                 }
                 break;
+            case 2:
+                cout << "Enter code to delete: ";
+                getline(cin,code);
+
+                // look for if the code is in t here
+                if(tree.searchNode(code)){
+                    tree.remove(code); // remove the code from th ebst
+                    cout << "Code deleted" << endl;
+                }
+                // if not ther then say that the coed couldnt be found
+                else{
+                    cout << "Code not found" << endl;
+                }
+            case 3:
+                cout << "Enter code to search for: ";
+                getline(cin,code);
+
+                // display weether or not the code was found
+                if(tree.searchNode(code)){
+                    cout << "Code found" << endl;
+                }
+                else{
+                    cout << "Code not found" << endl;
+                }
+            case 4:
+                cout << "Enter code to modify: " << endl;
+                getline(cin,code);
+                
+                // chcek to see if the code even exists in the first place
+                if(!tree.searchNode(code)){
+                    cout << "The code you want to modify does not exist" << endl;
+                }
+                else{
+                    cout << "Enter the new code: ";
+                    // here is where we use temp code to be the new code added
+                    getline(cin,tempcode);
+
+                }
                  
         }
 
